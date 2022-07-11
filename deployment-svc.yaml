@@ -17,7 +17,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: reverseproxy
-          image: tebohoxthapeli/udagram-reverseproxy:v1.2.0
+          image: tebohoxthapeli/udagram-reverseproxy:v1.2.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
