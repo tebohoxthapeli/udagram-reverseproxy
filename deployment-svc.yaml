@@ -14,10 +14,9 @@ spec:
       labels:
         app: reverseproxy
     spec:
-      restartPolicy: Always
       containers:
         - name: reverseproxy
-          image: tebohoxthapeli/udagram-reverseproxy:v1.2.2
+          image: tebohoxthapeli/reverseproxy:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -46,12 +45,6 @@ spec:
                   name: env-configmap
                   key: URL
 
-            - name: AWS_DEFAULT_REGION
-              valueFrom:
-                configMapKeyRef:
-                  name: env-configmap
-                  key: AWS_DEFAULT_REGION
-
             - name: AWS_REGION
               valueFrom:
                 configMapKeyRef:
@@ -64,17 +57,17 @@ spec:
                   name: env-configmap
                   key: AWS_PROFILE
 
-            - name: AWS_ACCESS_KEY_ID
+            - name: aws_access_key_id
               valueFrom:
                 secretKeyRef:
                   name: aws-secret
-                  key: AWS_ACCESS_KEY_ID
+                  key: aws_access_key_id
 
-            - name: AWS_SECRET_ACCESS_KEY
+            - name: aws_secret_access_key
               valueFrom:
                 secretKeyRef:
                   name: aws-secret
-                  key: AWS_SECRET_ACCESS_KEY
+                  key: aws_secret_access_key
 
             - name: JWT_SECRET
               valueFrom:

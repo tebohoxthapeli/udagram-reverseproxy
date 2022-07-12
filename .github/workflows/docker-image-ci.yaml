@@ -14,8 +14,8 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build and push reverse proxy Docker image.
         with:
-          image: tebohoxthapeli/udagram-reverseproxy
-          tags: v1.2.2
+          image: tebohoxthapeli/reverseproxy
+          tags: v1
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
